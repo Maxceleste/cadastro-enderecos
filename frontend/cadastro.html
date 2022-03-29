@@ -12,24 +12,25 @@
     <div id="tituloCadastro">
         <h3>Cadastrar o endereço</h3>
         <p>Preencha todas as informações corretamente.</p>
+        <p>Os campos marcados com <span class="aviso">*</span> são obrigatórios.</p>
         <br>
     </div>
 
     <form>
         <fieldset>
             <div>
-                <label for="cep">CEP</label> <br>
-                <input name="cep" class="cep" type="text" placeholder="Ex: 12345678" pattern="[0-9]{8}">
+                <label for="cep">CEP</label> <span class="aviso">*</span> <br>
+                <input name="cep" class="cep" type="text" placeholder="Ex: 12345678" pattern="[0-9]{8}" required>
             </div>
             <br>
             <div>
-                <label for="endereco">Endereço</label> <br>
-                <input type="text" class="endereco" name="endereco" placeholder="Ex: Rua dos tupis">
+                <label for="endereco">Endereço</label> <span class="aviso">*</span> <br>
+                <input type="text" class="endereco" name="endereco" placeholder="Ex: Rua dos tupis" required>
             </div>
             <br>
             <div>
-                <label for="numero">Número</label> <br>
-                <input type="text" class="numero" name="numero" placeholder="Ex: Número 83">
+                <label for="numero">Número</label> <span class="aviso">*</span> <br>
+                <input type="text" class="numero" name="numero" placeholder="Ex: Número 83" required>
             </div>
             <br>
             <div>
@@ -38,18 +39,18 @@
             </div>
             <br>
             <div>
-                <label for="bairro">Bairro</label> <br>
-                <input type="text" class="bairro" name="bairro" placeholder="Ex: Centro">
+                <label for="bairro">Bairro</label> <span class="aviso">*</span> <br>
+                <input type="text" class="bairro" name="bairro" placeholder="Ex: Centro" required>
             </div>
             <br>
             <div>
-                <label for="cidade">Cidade</label> <br>
-                <input type="text" class="cidade" name="cidade" placeholder="Ex: Belo Horizonte">
+                <label for="cidade">Cidade</label> <span class="aviso">*</span> <br>
+                <input type="text" class="cidade" name="cidade" placeholder="Ex: Belo Horizonte" required>
             </div>
             <br>
             <div>
-                <label for="uf">UF</label> <br>
-                <input type="text" class="uf" name="uf" placeholder="Ex: MG">
+                <label for="uf">UF</label> <span class="aviso">*</span> <br>
+                <input type="text" class="uf" name="uf" placeholder="Ex: MG" required>
             </div>
             <br>
             <div>
