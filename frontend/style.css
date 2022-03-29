@@ -39,3 +39,7 @@ table{
 #tituloCadastro{
     text-align: center;
 }
+
+.aviso{
+    color: #ff0000;
+}
