@@ -1,0 +1,32 @@
+#botao{
+    text-align: center;
+}
+.cadastrar{
+    width: 350px;
+    text-align: center;
+    padding: 15px 20px;
+    border: 1px solid #3a00d8;
+    border-radius: 6px;
+    background-color: #0277fc;
+    font-size: 18px;
+}
+
+#tabela{
+    text-align: center;
+}
+table{
+    margin: auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+    
+}
+
+.lista th{
+    border: 2px solid;
+    background-color: #00b8d8;
+}
+.lista td{
+    border: 2px solid;
+    background-color:#ffffff;
+}
