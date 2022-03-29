@@ -35,3 +35,7 @@ table{
     border: 2px solid;
     background-color:#ffffff;
 }
+
+#tituloCadastro{
+    text-align: center;
+}
