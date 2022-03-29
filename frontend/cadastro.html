@@ -8,6 +8,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="tituloCadastro">
+        <h3>Cadastrar o endereço</h3>
+        <p>Preencha todas as informações corretamente.</p>
+        <br>
+    </div>
+
+    <form>
+        <fieldset>
+            <div>
+                <label for="CEP">CEP</label> <br>
+                <input name="CEP" class="CEP" type="text" placeholder="12345678" pattern="[0-9]{8}">
+            </div>
+            <br>
+            <div>
+                <label for="endereco">Endereço</label> <br>
+                <input type="text" class="endereco" name="endereco" placeholder="Ex: Rua dos tupis">
+            </div>
+        </fieldset>
+    </form>
     
 </body>
 </html>
