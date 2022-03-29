@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 #titulo{
     text-align: center;
     font-family:'Courier New', Courier, monospace;
@@ -42,4 +47,26 @@ table{
 
 .aviso{
     color: #ff0000;
+}
+
+fieldset{
+    border: 0;
+    text-align: center;
+    
+
+}
+
+#cadastrarEndereco{
+    width: 200px;
+    padding: 15px 20px;
+    border: 1px solid #3a00d8;
+    border-radius: 6px;
+    background-color: #0277fc;
+    font-size: 18px;
+    margin: 2%;
+}
+
+#tituloCadastro h1{
+    margin-bottom: 1%;
+    font-family:'Courier New', Courier, monospace;
 }
