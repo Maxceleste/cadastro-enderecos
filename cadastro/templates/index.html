@@ -1,17 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Endereços</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
 
-<body>
-    <div id="titulo">
-        <h1>Endereços cadastrados</h1>
+{% block content %}
     </div>
     <div id="tabela">
         <table class="lista">
@@ -39,10 +29,12 @@
     </div>    
 
     <div id="botao">
-        <a href="cadastro.html">
+        <a href="{% url 'form' %}">
             <input type="button" value="Cadastrar endereço" class="cadastrar">
         </a>
     </div>
     
 </body>
 </html>
+
+{% endblock %}
