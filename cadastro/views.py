@@ -12,6 +12,7 @@ def form(request):
         cadastro = formEndereco(request.POST)
 
         if cadastro.is_valid():
+            cadastro.save()
             return redirect('index')
 
     else:

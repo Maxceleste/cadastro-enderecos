@@ -1,3 +1,4 @@
+from termios import CEOF
 from xml.parsers.expat import model
 from django.db import models
 from django.forms import ModelForm
@@ -67,6 +68,9 @@ class Endereco(models.Model):
         error_messages = {'max_lenght' : 'O complemento é muito grande.'},
         blank = True
     )
+    
+    def __str__(self):
+        return self.cep
 
 
 class formEndereco(ModelForm):
