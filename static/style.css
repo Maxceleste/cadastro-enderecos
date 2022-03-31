@@ -49,7 +49,7 @@ table{
     color: #ff0000;
 }
 
-fieldset{
+form{
     border: 0;
     text-align: center;
     
@@ -69,4 +69,8 @@ fieldset{
 #tituloCadastro h1{
     margin-bottom: 1%;
     font-family:'Courier New', Courier, monospace;
+}
+
+.errorlist{
+    color: #ff0000;
 }
