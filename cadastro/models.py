@@ -3,12 +3,12 @@ from django.db import models
 
 # Create your models here.
 
-class enderecos(models.Model):
+class Endereco(models.Model):
     cep = models.CharField(max_length = 8)
-    endereco = models.TextField()
+    endereco = models.CharField(max_length=300)
     numero = models.CharField(max_length=50)
-    complemento = models.TextField()
-    bairro = models.TextField()
+    complemento = models.CharField(max_length=300)
+    bairro = models.CharField(max_length=300)
     cidade = models.CharField(max_length=50)
     uf = models.CharField(max_length=2)
-    descricao = models.TextField()
+    descricao = models.CharField(max_length=300)
