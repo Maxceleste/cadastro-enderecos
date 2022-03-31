@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CadastroEnderecos
+from .models import formEndereco
 
 # Create your views here.
 
@@ -9,11 +9,11 @@ def index(request):
 
 def form(request):
     if request.method == 'POST':
-        cadastro = CadastroEnderecos(request.POST)
+        cadastro = formEndereco(request.POST)
 
         if cadastro.is_valid():
             return redirect('index')
 
     else:
-        cadastro = CadastroEnderecos()
+        cadastro = formEndereco()
     return render(request, 'form.html', {'cadastro':cadastro} )
