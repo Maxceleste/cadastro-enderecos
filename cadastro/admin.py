@@ -6,6 +6,8 @@ class DisplayEnderecos(admin.ModelAdmin):
     search_fields = ('cep',)
     list_filter = ('uf',)
     list_per_page = 10
+#Estilização do Django Admin para ser mais fácil de utilizar.
 
 
 admin.site.register(Endereco, DisplayEnderecos)
+#Registrando o Django Admin

@@ -6,13 +6,16 @@ from .models import formEndereco, Endereco
 
 def index(request):
 
-    enderecos = Endereco.objects.all()
+    enderecos = Endereco.objects.all() 
+    #Pegando todos os endereços do banco
 
     dados = {
         'enderecos' : enderecos
     }
+    #Inserindo nos dados os endereços
 
     return render(request, 'index.html', dados)
+    #Retornando na página o HTML e os dados
 
 
 def form(request):
@@ -27,7 +30,7 @@ def form(request):
         uf1 = request.POST['uf']
         complemento1 = request.POST['complemento']
         descricao1 = request.POST['descricao']
-
+    #Se a página der request de POST, irá pegar todos os posts dos campos. (Coloquei "1" no final para diferenciar)
         
         
 
@@ -37,15 +40,20 @@ def form(request):
                 endereco_anterior.complemento = complemento1
                 endereco_anterior.descricao = descricao1
                 endereco_anterior.save()
+            #Se o cadastro estiver tudo validado, irá checar se os campos obrigatórios ja foram inseridos.
+            #Caso já forma inseridos, ele apenas irá atualizar o já cadastrado com os campos não obrigatórios.
             else:
-                cadastro.save()        
+                cadastro.save()
+            #Caso os campos obrigatórios sejam novos, ele vai salvar um novo endereço no banco.        
             return redirect('index')
-
-
+            #E assim, depois desse processo ele te redireciona para a página index
     else:
+    #Esse else representa "caso o método post não seja chamado", ou seja, o método GET
         cadastro = formEndereco()
+    #Aqui ele determina o cadastro como o model form que fizemos
 
     dados = {
         'cadastro' : cadastro,
     }
+    #Adiciona o cadastro nos dados, e envia para o site para renderizar tudo.
     return render(request, 'form.html', dados )

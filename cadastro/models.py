@@ -9,6 +9,7 @@ from django.core.validators import RegexValidator
 # Create your models here.
 
 class Endereco(models.Model):
+#Todo a estrutura do banco de dados criada aqui, considerando alguns valores para que não inserir endereços errados.
 
     cep = models.CharField(
         verbose_name = 'CEP',
@@ -79,7 +80,14 @@ class formEndereco(ModelForm):
         model = Endereco
         fields = ['cep', 'endereco', 'numero', 'complemento', 'bairro', 'cidade', 'uf', 'descricao']
         widgets = {
-            'cep' : forms.TextInput(attrs={'placeholder': 'Ex: 01001000'})
+            'cep' : forms.TextInput(attrs={'placeholder': 'Ex: 01001000'}),
+            'endereco' : forms.TextInput(attrs={'placeholder': 'Ex: José Josino de Oliveira'}),
+            'numero' : forms.TextInput(attrs={'placeholder': 'Ex: 83'}),
+            'complemento' : forms.TextInput(attrs={'placeholder': 'Ex: D'}),            
+            'bairro' : forms.TextInput(attrs={'placeholder': 'Ex: Funcionários '}),
+            'cidade' : forms.TextInput(attrs={'placeholder': 'Ex: Barbacena'}),
+            'uf' : forms.TextInput(attrs={'placeholder': 'Ex: MG'}),
+            'descricao' : forms.TextInput(attrs={'placeholder': 'Ex: Casa amarela dos fundos'})
             }
-
+#Criação do formulário com base do models do banco de dados.
 

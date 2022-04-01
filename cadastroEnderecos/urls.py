@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('cadastro.urls'))
+    path('', include('cadastro.urls')) #URL do index do site
 ]

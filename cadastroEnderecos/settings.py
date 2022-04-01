@@ -21,11 +21,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+# Deve ser feito uma nova Secret key
 SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast = bool)
+# O debug aqui está configurado para True, já que irá rodar apenas nessa máquina.
+DEBUG = True
 
 ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 
@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 # Application definition
 
 INSTALLED_APPS = [
-    'cadastro',
+    'cadastro', #App de cadastro, que é o principal
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -73,8 +73,8 @@ TEMPLATES = [
 WSGI_APPLICATION = 'cadastroEnderecos.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+# Registrando toda a database aqui, utilizando Mysql
+#Há total liberdade para utilizar outro banco de dados
 
 DATABASES = {
     'default': {
@@ -121,10 +121,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')#Onde fica os arquivos estáticos
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'cadastroEnderecos/static')
+    os.path.join(BASE_DIR, 'cadastroEnderecos/static')#Onde os arquivos estaticos ficam antes do collectstatic
 ]
 
 
