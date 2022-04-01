@@ -16,6 +16,8 @@ def index(request):
 
 
 def form(request):
+
+    enderecos = Endereco.objects.all()
     
     if request.method == 'POST':
         cadastro = formEndereco(request.POST)
@@ -30,6 +32,7 @@ def form(request):
         cadastro = formEndereco()
 
     dados = {
-        'cadastro':cadastro
+        'cadastro' : cadastro,
+        'enderecos' : enderecos
     }
     return render(request, 'form.html', dados )

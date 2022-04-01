@@ -1,5 +1,6 @@
 from termios import CEOF
 from xml.parsers.expat import model
+from django import forms
 from django.db import models
 from django.forms import ModelForm
 from django.core.validators import RegexValidator
@@ -77,6 +78,8 @@ class formEndereco(ModelForm):
     class Meta:
         model = Endereco
         fields = ['cep', 'endereco', 'numero', 'complemento', 'bairro', 'cidade', 'uf', 'descricao']
-
+        widgets = {
+            'cep' : forms.TextInput(attrs={'placeholder': 'Ex: 01001000'})
+            }
 
 
