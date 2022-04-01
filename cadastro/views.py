@@ -17,14 +17,28 @@ def index(request):
 
 def form(request):
 
-    enderecos = Endereco.objects.all()
-    
     if request.method == 'POST':
         cadastro = formEndereco(request.POST)
-        if cadastro.is_valid():   
-                
+        cep1 = request.POST['cep']
+        endereco1 = request.POST['endereco']
+        bairro1 = request.POST['bairro']
+        numero1 = request.POST['numero']
+        cidade1 = request.POST['cidade']
+        uf1 = request.POST['uf']
+        complemento1 = request.POST['complemento']
+        descricao1 = request.POST['descricao']
 
-            cadastro.save()
+        
+        
+
+        if cadastro.is_valid():  
+            if Endereco.objects.filter(cep=cep1, endereco = endereco1, bairro = bairro1, cidade = cidade1, uf = uf1, numero=numero1):
+                endereco_anterior = Endereco.objects.get(cep=cep1, endereco = endereco1, bairro = bairro1, cidade = cidade1, uf = uf1, numero=numero1)
+                endereco_anterior.complemento = complemento1
+                endereco_anterior.descricao = descricao1
+                endereco_anterior.save()
+            else:
+                cadastro.save()        
             return redirect('index')
 
 
@@ -33,6 +47,5 @@ def form(request):
 
     dados = {
         'cadastro' : cadastro,
-        'enderecos' : enderecos
     }
     return render(request, 'form.html', dados )
