@@ -3,6 +3,7 @@
 
 {% block content %}
     </div>
+            {% if enderecos %}
     <div id="tabela">
         <table class="lista">
             <tr>
@@ -15,16 +16,22 @@
                 <th>UF</td>
                 <th>Descrição</th>
             </tr>
+            {% for endereco in enderecos %}
             <tr>
-                <td>30190-906</td>
-                <td>Rua dos tupis</td>
-                <td>485</td>
-                <td>Centro</td>
-                <td>Empresa</td>
-                <td>Belo Horizonte</td>
-                <td>MG</td>
-                <td></td>
+                <td>{{ endereco.cep }}</td>
+                <td>{{ endereco.endereco }}</td>
+                <td>{{ endereco.numero }}</td>
+                <td>{{ endereco.bairro }}</td>
+                <td>{{ endereco.complemento }}</td>
+                <td>{{ endereco.cidade }}</td>
+                <td>{{ endereco.uf }}</td>
+                <td>{{ endereco.descricao }}</td>
             </tr>
+            {% endfor %}
+            {% else %}
+<h2 style="text-align: center;">Não há dados na tabela</h2>
+            {% endif %}
+
         </table>
     </div>    
 
