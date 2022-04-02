@@ -1,6 +1,8 @@
-from django.http import JsonResponse 
+from rest_framework import viewsets
+from cadastro.models import Endereco
+from serializer import enderecoSerializer
 
-def consultar_cep(request):
-    if request.method == 'GET':
-        cep = {'cep' : '75706835'}
-        return JsonResponse(cep)
+class EnderecoViewSet(viewsets.ModelViewSet):
+    """ Testando e exibindo todos os ceps """
+    queryset = Endereco.objects.all()
+    serializer_class = enderecoSerializer
