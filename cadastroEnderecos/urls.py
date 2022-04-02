@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from consultacep.views import consultar_cep
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('cadastro.urls')) #URL do index do site
+    path('', include('cadastro.urls')), #URL do index do site
+    path('teste/', consultar_cep),
 ]
