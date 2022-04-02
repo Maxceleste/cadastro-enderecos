@@ -15,10 +15,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from consultacep.views import consultar_cep
+from consultacep.views import EnderecoViewSet
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+router.register('enderecos', viewset = EnderecoViewSet, basename = 'Enderecos')
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cadastro.urls')), #URL do index do site
-    path('teste/', consultar_cep),
+    path('consultacep/', include(router.urls)), #url da nossa api de consultacep
 ]
