@@ -34,6 +34,7 @@ ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 
 INSTALLED_APPS = [
     'cadastro', #App de cadastro, que é o principal
+    'rest_framework', #Django rest
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
