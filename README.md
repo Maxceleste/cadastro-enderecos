@@ -14,6 +14,15 @@ Perceba que foi instalado o python decouple também. Crie na raiz do repositóri
 
 ![image](https://user-images.githubusercontent.com/89614438/161355350-db4974cd-23b4-4a8c-89be-c925c01b0751.png)
 
+Caso queira usar o Django admin, terá que criar um superuser com o comando:
+
+```
+python manage.py createsuperuser
+
+```
+
+Assim que criar, pode logar no django admin tranquilamente.
+
 Após isso, pode testar executando no terminal:
 ```
 python manage.py runserver
@@ -53,7 +62,7 @@ E aproveite!
 
 O Frontend desse projeto não é o foco, mas são páginas que funcionam mesmo não sendo tão bonitas.
 
-##Como funciona?
+## Como funciona?
 
 Nesse projeto simples, utilizei o banco de dados como base para fazer o formulário, ou seja, utilizei a API do django ModelForm.
 Observer o campo CEP por exemplo:
@@ -75,7 +84,8 @@ Observe na imagem aciama, o código em Javascript utilizando JQuery.
 Quando se tira o foco do campo de cep, é ativado esse evento onde:
 - Ele tenta fazer a request da api de cep
 - Se der certo, ele preenche os espaços com "..." até o valor aparecerem
-- Os valores aparecem no campo desejado e assim o foco muda para o próximo campo vazio.
+- Caso a api devolva erro, os campos vão ficar vazios de novo e o evento vai acabar.
+- Caso a api devolva o resultado correto, os valores aparecem no campo desejado e assim o foco muda para o próximo campo vazio.
 
 ![image](https://user-images.githubusercontent.com/89614438/161354120-9e350883-2196-4126-9a98-c297d1b5b51a.png)
 
