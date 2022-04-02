@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [config('ALLOWED_HOSTS')]
 INSTALLED_APPS = [
     'cadastro', #App de cadastro, que é o principal
     'rest_framework', #Django rest
+    'consultacep', #Api de consultar cep
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
