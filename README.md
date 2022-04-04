@@ -14,6 +14,18 @@ Perceba que foi instalado o python decouple também. Crie na raiz do repositóri
 
 ![image](https://user-images.githubusercontent.com/89614438/161355350-db4974cd-23b4-4a8c-89be-c925c01b0751.png)
 
+Agora, execute as migrações do django com:
+
+```
+python manage.py makemigrations
+
+```
+
+```
+python manage.py migrate
+
+```
+
 Caso queira usar o Django admin, terá que criar um superuser com o comando:
 
 ```
